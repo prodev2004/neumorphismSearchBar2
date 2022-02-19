@@ -1,0 +1,74 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:100,200,300,regular,500,600,700,100italic,200italic,300italic,italic,500italic,600italic,700italic);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', sans-serif;
+}
+body {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background-color: #e0e0e0;
+}
+
+.input-container {
+    width: 350px;
+    height: 50px;
+    border-radius: .5rem;
+    background-color: #e0e0e0;
+    box-shadow: inset .4rem .4rem 1rem #bebebe,
+                inset -.4rem -.4rem 1rem #fff,
+                0 0 0 .5rem #e0e0e0,
+                0 0 0 .5rem #e0e0e0,
+                .4rem .4rem 1rem #8b8b8b,
+                -.4rem -.4rem 1rem #fff;
+    position: relative;
+    overflow: hidden;
+}
+input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: .5rem 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+span {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #161616;
+    width: 30px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 .3rem rgba(0, 0, 0, .3);
+    transition: 200ms ease-in-out background-color,
+                200ms ease-in-out box-shadow;
+}
+i {
+    color: #fff;
+    font-size: .7rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 200ms ease-in-out color,
+                200ms ease-in-out font-size;
+}
+
+/* this symbol (~) selects the sibling element */
+/* span is a sibling element of input and the other way around */
+input:focus ~ span {
+    background-color: transparent;
+    box-shadow: none;
+}
+input:focus ~ span i {
+    color: #161616;
+    font-size: 1.5rem;
+}
